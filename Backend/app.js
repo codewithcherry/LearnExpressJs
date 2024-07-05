@@ -9,7 +9,7 @@ const app=express()
 
 app.use(bodyParser.urlencoded({extended:false}))
 
-app.use(adminRouter)
+app.use("/admin",adminRouter)
 app.use(userRouter)
 
 app.use("/err",(req,res,next)=>{
