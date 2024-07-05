@@ -12,5 +12,9 @@ app.use(bodyParser.urlencoded({extended:false}))
 app.use(adminRouter)
 app.use(userRouter)
 
+app.use("/err",(req,res,next)=>{
+    res.status(404).send("<h1>Something went wrong 404 error</h1>");
+})
+
 
 app.listen(3000)
