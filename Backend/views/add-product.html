@@ -6,6 +6,21 @@
     <title>add product page</title>
 </head>
 <body>
-    
+    <header>
+        <div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/add-product">add products</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div>
+            <form action="/add-products" method="POST">
+                <input type="text" name="product" placeholder="type here...">
+                <button type="submit">add product</button>
+            </form>
+        </div>
+    </main>
 </body>
 </html>
