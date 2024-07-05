@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({extended:false}))
 app.use("/admin",adminRouter)
 app.use(userRouter)
 
-app.use("/err",(req,res,next)=>{
+app.use((req,res,next)=>{
     res.status(404).sendFile(path.join(__dirname,"views","errorPage.html"));
 })
 
