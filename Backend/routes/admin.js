@@ -1,11 +1,14 @@
 //this file to deal with admin related tasks routes
 
-const express=require('express')
+const express=require('express');
+//using path core module to set the path
+
+const path=require("path");
 const router=express.Router();
 
 router.get("/add-product",(req,res,next)=>{
     console.log("first middleware");
-    res.send("<html><body><form action='/admin/view-product' method='POST'><input type=text name='product-title' placeholder='type here'><button type='submit'>send</button></form></body></html>")
+    res.sendFile(path.join(__dirname,"../","views",'add-product.html'));
 })
 
 router.post("/view-product",(req,res,next)=>{
