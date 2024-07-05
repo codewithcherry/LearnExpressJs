@@ -4,6 +4,7 @@ const express = require('express')
 const bodyParser=require('body-parser')
 const userRouter=require("./routes/user");
 const adminRouter=require("./routes/admin")
+const path=require('path')
 
 const app=express()
 
@@ -13,7 +14,7 @@ app.use("/admin",adminRouter)
 app.use(userRouter)
 
 app.use("/err",(req,res,next)=>{
-    res.status(404).send("<h1>Something went wrong 404 error</h1>");
+    res.status(404).sendFile(path.join(__dirname,"views","errorPage.html"));
 })
 
 
