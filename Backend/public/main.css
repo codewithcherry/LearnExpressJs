@@ -50,7 +50,16 @@ body{
 
 /* code below is for pug file for displaying products cards */
 
-product-card {
+.product-grid{
+    width: 70%;
+    margin: 0 15%;
+    display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px; /* Adjust the gap between cards as desired */
+
+}
+
+.product-card {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -60,13 +69,13 @@ product-card {
   }
   
   .product-image {
-    width: 100%;
-    height: auto;
+    width: 150px;
+    height: 200px;
   }
   
   .product-details {
     padding: 15px;
-    text-align: center;
+    text-align: left;
   }
   
   .product-title {
