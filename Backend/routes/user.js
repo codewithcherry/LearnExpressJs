@@ -6,9 +6,18 @@ const path=require('path')
 const rootDir=require("../utils/utilpath")
 const router=express.Router();
 
+//below commented code is for html code file
+
+// router.get("/",(req,res,next)=>{
+//     console.log("first middleware");
+//     res.sendFile(path.join(rootDir,'views','shop.html'))
+// })
+
+//below code is for template engines pug and related pug file code
+
 router.get("/",(req,res,next)=>{
-    console.log("first middleware");
-    res.sendFile(path.join(rootDir,'views','shop.html'))
+    console.log("This is pug related middlewware");
+    res.render('shop');
 })
 
 module.exports=router
