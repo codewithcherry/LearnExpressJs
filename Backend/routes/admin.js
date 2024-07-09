@@ -5,6 +5,9 @@ const express=require('express');
 
 const path=require("path");
 
+//variable to store the passing data to send to various request and users
+const products=[];
+
 //import utilspath module to set the root module  directory path to set path in easy way
 const rootDir=require("../utils/utilpath")
 
@@ -17,8 +20,10 @@ router.get("/add-product",(req,res,next)=>{
 
 router.post("/view-product",(req,res,next)=>{
     console.log("this is view product page")
-    console.log(req.body)
+    products.push({title: req.body.product})
+    console.log(products);
     res.redirect("/")
     
 })
-module.exports=router
+exports.route=router
+exports.productData=products
