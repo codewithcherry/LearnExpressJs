@@ -18,7 +18,7 @@ const adminData=require('./admin')
 //below code is for template engines pug and related pug file code
 
 router.get("/",(req,res,next)=>{
-    const products=adminData.route
+    const products=adminData.productData;
     console.log("This is pug related middlewware");
     res.render('shop',{prods:products,myTitle:"My shop app"});
 })
