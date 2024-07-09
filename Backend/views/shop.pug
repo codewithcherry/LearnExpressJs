@@ -2,8 +2,21 @@
 
 doctype html
 html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title My shop app
-    body 
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Shop App
+    link(rel="stylesheet", href="/main.css")
+  body
+    header.main-header
+      .main-header-div
+        ul.main-header-list
+          li.main-header-list-items
+            a.active(href="/") Home
+          li.main-header-list-items
+            a(href="/admin/add-product") add products
+    main.main-content
+      .main-content-container
+        h1 welcome to the my shop express app
+        h2 Products
+        p products are listed here...
