@@ -5,7 +5,7 @@ html(lang="en")
   head
     meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    title Shop App
+    title #{myTitle}
     link(rel="stylesheet", href="/main.css")
   body
     header.main-header
@@ -20,10 +20,15 @@ html(lang="en")
         h1 welcome to the my shop express app
         h2 Products
         p products are listed here...
-        .product-card
-            img.product-image(src="/path/to/product-image.jpg", alt="Product Image")
-            .product-details
-                h2.product-title Product Title
-                p.product-description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut urna id justo convallis fermentum.
-                p.product-price $99.99
-                button.add-to-cart Add to Cart
+        if prods.length>0
+            .product-grid
+                each pro in prods
+                    .product-card
+                        img.product-image(src="https://edit.org/images/cat/book-covers-big-2019101610.jpg", alt="Product Image")
+                        .product-details
+                            h2.product-title #{pro.title}
+                            p.product-price $99.99
+                            p.product-description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut urna id justo convallis fermentum.
+                            button.add-to-cart Add to Cart
+        else 
+            h1 no products to display
