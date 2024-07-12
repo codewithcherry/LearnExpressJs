@@ -15,7 +15,7 @@ const adminData=require('./admin')
 //     res.sendFile(path.join(rootDir,'views','shop.html'))
 // })
 
-//below code is for template engines pug and related pug file code
+//below code is for template engines pug and related pug file code to share dynamic data
 
 router.get("/",(req,res,next)=>{
     const products=adminData.productData;
