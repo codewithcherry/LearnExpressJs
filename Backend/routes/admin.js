@@ -13,9 +13,18 @@ const rootDir=require("../utils/utilpath")
 
 const router=express.Router();
 
-router.get("/add-product",(req,res,next)=>{
-    console.log("first middleware");
-    res.sendFile(path.join(rootDir,"views",'add-product.html'));
+// below code is to handle the request for add product html file
+
+// router.get("/add-product",(req,res,next)=>{
+//     console.log("first middleware");
+//     res.sendFile(path.join(rootDir,"views",'add-product.html'));
+// })
+
+//below code is to handle request to show add-products pug from templating engine rendering
+
+router.get('/add-product',(ref,res,next)=>{
+    console.log("rendering pug file from templating engine of add products");
+    res.render("add-products",{pageTitle:"add products"});
 })
 
 router.post("/view-product",(req,res,next)=>{
