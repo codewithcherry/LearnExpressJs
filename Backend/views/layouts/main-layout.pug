@@ -13,8 +13,8 @@ html(lang="en")
       .main-header-div
         ul.main-header-list
           li.main-header-list-items
-            a.active(href="/") Home
+            a(href="/",class=(path==="/"?'active':'')) Home
           li.main-header-list-items
-            a(href="/admin/add-product") add products
+            a(href="/admin/add-product",class=(path==="admin/add-product"?"active":"")) add products
 
     block content

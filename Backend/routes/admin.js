@@ -24,7 +24,7 @@ const router=express.Router();
 
 router.get('/add-product',(ref,res,next)=>{
     console.log("rendering pug file from templating engine of add products");
-    res.render("add-products",{pageTitle:"add products"});
+    res.render("add-products",{pageTitle:"add products",path:"admin/add-product"});
 })
 
 router.post("/view-product",(req,res,next)=>{
