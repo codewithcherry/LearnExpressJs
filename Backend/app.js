@@ -18,9 +18,19 @@ app.use(express.static(path.join(__dirname,"public")));
 app.use("/admin",adminData.route);
 app.use(userRouter);
 
+//below code is for handling wrong path tp redirect to error page using html 
+
+// app.use((req,res,next)=>{
+//     res.status(404).sendFile(path.join(__dirname,"views","errorPage.html"));
+// })
+
+//below code is for setting error page for wrong path using templating engine pug
+
 app.use((req,res,next)=>{
-    res.status(404).sendFile(path.join(__dirname,"views","errorPage.html"));
+    console.log("error page file from templating engines");
+    res.status(404).render("errorPage",{pageTitle:"page not found"});
 })
+
 
 
 app.listen(3000);
