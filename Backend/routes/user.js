@@ -20,7 +20,7 @@ const adminData=require('./admin')
 router.get("/",(req,res,next)=>{
     const products=adminData.productData;
     console.log("This is pug related middlewware");
-    res.render('shop',{prods:products,myTitle:"My shop app",path:"/"});
+    res.render('shop',{prods:products,pageTitle:"My shop app",path:"/"});
 })
 
 module.exports=router
