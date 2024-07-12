@@ -1,1 +1,20 @@
 //- this main layout pug file to render optimised pages using extends and blocks
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title #{pageTitle}
+    block styles
+    link(rel="stylesheet" href="/error.css")
+  body
+    header.main-header
+      .main-header-div
+        ul.main-header-list
+          li.main-header-list-items
+            a.active(href="/") Home
+          li.main-header-list-items
+            a(href="/admin/add-product") add products
+
+    block content
