@@ -1,1 +1,26 @@
 //- this is the pug file for templating engine to add products
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title add product page
+    link(rel="stylesheet" href="/products.css")
+  body
+    header.main-header
+      .main-header-div
+        ul.main-header-list
+          li.main-header-list-items
+            a(href="/") Home
+          li.main-header-list-items
+            a.active(href="/admin/add-product") add products
+    main.main-content
+      .main-content-container
+        form(action="/admin/view-product" method="POST" class="main-content-form")
+          h1.main-content-form-title Add Product Form
+          div
+            label(for="product") Product Title
+            input(type="text" name="product" id="product" placeholder="type here...")
+          button.main-content-form-button(type="submit") add product
+
