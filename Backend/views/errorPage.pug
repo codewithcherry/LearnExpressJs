@@ -1,2 +1,22 @@
 //- this file for pug file for templating erro page of the shop app
 
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Error Page
+    link(rel="stylesheet" href="/error.css")
+  body
+    header.main-header
+      .main-header-div
+        ul.main-header-list
+          li.main-header-list-items
+            a.active(href="/") Home
+          li.main-header-list-items
+            a(href="/admin/add-product") add products
+    main.main-content
+      section
+        .main-content-div
+          h1.main-content-title 404 Network Error
+          p.main-content-p Page not found
