@@ -1,20 +1,11 @@
 //- this file to develop the same shop html in pug format for template engine
 
-doctype html
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    title #{myTitle}
+extends layouts/main-layout.pug 
+
+block styles 
     link(rel="stylesheet", href="/main.css")
-  body
-    header.main-header
-      .main-header-div
-        ul.main-header-list
-          li.main-header-list-items
-            a.active(href="/") Home
-          li.main-header-list-items
-            a(href="/admin/add-product") add products
+
+block content
     main.main-content
       .main-content-container
         h1 welcome to the my shop express app
