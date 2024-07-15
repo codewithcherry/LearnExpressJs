@@ -1,1 +1,48 @@
 {{!-- this is for shop main page in handlebar template --}}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{pageTitle}}</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="main-header-div">
+            <ul class="main-header-list">
+                <li class="main-header-list-items"><a class="active" href="/">Home</a></li>
+                <li class="main-header-list-items"><a href="/admin/add-product">add products</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="main-content">
+            <div class="main-content-container">
+                <h1>Welcome to My Shop Express App</h1>
+                <h2>Products</h2>
+                <p>Products are listed here...</p>
+
+                {{#if prods.length}}
+                    <div class="product-grid">
+                        {{#each prods}}
+                            <div class="product-card">
+                                <img class="product-image" src="https://edit.org/images/cat/book-covers-big-2019101610.jpg" alt="Product Image">
+                                <div class="product-details">
+                                    <h2 class="product-title">{{this.title}}</h2>
+                                    <p class="product-price">$99.99</p>
+                                    <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut urna id justo convallis fermentum.</p>
+                                    <button class="add-to-cart">Add to Cart</button>
+                                </div>
+                            </div>
+                        {{/each}}
+                    </div>
+                {{else}}
+                    <h1>No products to display</h1>
+                {{/if}}
+            </div>
+        </main>
+    
+</body>
+</html>
