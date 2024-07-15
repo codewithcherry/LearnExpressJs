@@ -5,10 +5,16 @@ const bodyParser=require('body-parser');
 const userRouter=require("./routes/user");
 const adminData=require("./routes/admin");
 const path=require('path');
+const expressHbs=require('express-handlebars');
 
 const app=express()
 
-app.set('view engine','pug');
+app.engine("handlebars",expressHbs.engine({
+    defaultLayout: 'main',  // Specifies the default layout
+    layoutsDir: path.join(__dirname, 'views', 'layouts')  // Specifies the layouts directory
+}))
+
+app.set('view engine','handlebars');
 app.set('views','views');
 
 app.use(bodyParser.urlencoded({extended:false}));
